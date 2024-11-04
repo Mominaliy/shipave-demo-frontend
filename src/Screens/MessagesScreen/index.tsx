@@ -13,7 +13,6 @@ import {
   FileText,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -25,6 +24,7 @@ import three from "../../../public/images/3.jpg";
 import four from "../../../public/images/4.jpg";
 import five from "../../../public/images/5.jpg";
 import Image from "next/image";
+import { Input } from "@/components/ui/input";
 
 interface Chat {
   id: number;
@@ -374,7 +374,7 @@ export default function MessagesScreen() {
             />
             <Button variant="ghost" size="icon" className="mr-2">
               <Paperclip className="h-5 w-5" />
-              <input
+              <Input
                 type="file"
                 onChange={handleFileChange}
                 multiple

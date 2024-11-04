@@ -36,7 +36,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -225,7 +224,7 @@ export default function UserDashboardScreen() {
               <div className="flex items-center gap-4">
                 <form className="relative">
                   <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
-                  <Input
+                  <input
                     type="search"
                     placeholder="Search..."
                     className="w-full appearance-none bg-[#f8f8f8] pl-8 sm:w-64"

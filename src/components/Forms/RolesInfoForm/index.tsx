@@ -60,7 +60,15 @@ export default function RolesInfoForm({ updateData }: RolesInfoProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    updateData({ role, ...formData });
+    const stringifiedData = Object.entries(formData).reduce(
+      (acc, [key, value]) => ({
+        ...acc,
+        [key]: Array.isArray(value) ? value.join(", ") : String(value),
+      }),
+      {}
+    );
+
+    updateData({ role, ...stringifiedData });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -340,10 +348,7 @@ export default function RolesInfoForm({ updateData }: RolesInfoProps) {
                   <Checkbox
                     id="insurancePreference"
                     onCheckedChange={(checked) =>
-                      handleCheckboxChange(
-                        "insurancePreference",
-                        checked as boolean
-                      )
+                      handleCheckboxChange("insurancePreference")
                     }
                   />
                   <Label htmlFor="insurancePreference">
@@ -354,10 +359,7 @@ export default function RolesInfoForm({ updateData }: RolesInfoProps) {
                   <Checkbox
                     id="requiresCustoms"
                     onCheckedChange={(checked) =>
-                      handleCheckboxChange(
-                        "requiresCustoms",
-                        checked as boolean
-                      )
+                      handleCheckboxChange("requiresCustoms")
                     }
                   />
                   <Label htmlFor="requiresCustoms">
