@@ -20,10 +20,10 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, CheckIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
-import GeneralInfoForm from "../GeneralInfoForm";
-import AddressFrom from "../AddressForm";
-import VerificationForm from "../VerificationForm";
-import RolesInfoForm from "../RolesInfoForm";
+import GeneralInfoForm from "./GeneralInfoForm";
+import AddressFrom from "./AddressForm";
+import VerificationForm from "./VerificationForm";
+import RolesInfoForm from "./RolesInfoForm";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },

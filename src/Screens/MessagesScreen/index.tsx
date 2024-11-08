@@ -210,45 +210,12 @@ export default function MessagesScreen() {
   );
 
   return (
-    <div className="flex h-screen bg-gray-50 overflow-y-hidden">
-      <header className="fixed top-0 left-0 right-0 flex items-center justify-between p-4 bg-white border-b border-gray-200 z-10">
-        <div className="flex items-center">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="mr-2 md:hidden">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-              <div className="py-4">
-                <h2 className="text-lg font-semibold mb-4">Chats</h2>
-                <ChatList />
-              </div>
-            </SheetContent>
-          </Sheet>
-          <div className="flex items-center gap-2">
-            <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-[#008080] text-white">
-              <Plane className="size-5" />
-            </div>
-            <span className="text-lg tracking-tight font-semibold text-[#008080]">
-              ShipAve
-            </span>
-          </div>
-        </div>
-        <Button
-          onClick={() => router.push("/dashboard")}
-          variant="ghost"
-          size="sm"
-          className="text-gray-600 hover:bg-primaryColor hover:text-white"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Dashboard
-        </Button>
-      </header>
-
-      <div className="flex flex-1 mt-14 pt-4 ">
-        <div className="hidden md:block w-1/3 max-w-xs bg-white border-r border-gray-200 pt-5">
+    <div
+      className="flex bg-gray-50 overflow-y-hidden"
+      style={{ height: "calc(100vh - 60px)" }}
+    >
+      <div className="flex flex-1 mt-0 pt-0 ">
+        <div className="hidden md:block w-1/3 h-full overflow-hidden max-w-xs bg-white border-r border-gray-200 pt-5">
           <div className="flex items-center px-2 mx-5 mb-5 bg-[#F2F0EF] rounded-lg shadow-md">
             <Search className="size-5 text-black" />
             <Input
@@ -260,10 +227,10 @@ export default function MessagesScreen() {
           <ChatList />
         </div>
 
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col h-full">
           <div
             ref={scrollRef}
-            className="flex-1 p-4 overflow-y-scroll h-full bg-stone-100"
+            className="flex-1 p-4 overflow-y-scroll bg-stone-100"
           >
             {(userMessages[selectedChat] || []).map((message) => (
               <div
